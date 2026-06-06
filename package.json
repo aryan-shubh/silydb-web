@@ -11,6 +11,10 @@
     "typecheck": "oxlint --type-aware --type-check .",
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx src/index.ts",
     "check": "bun run lint && bun run format:check && bun run typecheck"
   },
   "dependencies": {
