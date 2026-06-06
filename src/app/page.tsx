@@ -7,6 +7,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+import { LaunchSignalChart } from "@/components/launch-signal-chart";
+
 import { queueLaunchRequest } from "./actions";
 
 const regionSeries = [
@@ -19,23 +21,6 @@ const regionSeries = [
   { code: "fra", label: "Frankfurt", loadClass: "w-[68%]", latency: 28 },
   { code: "sin", label: "Singapore", loadClass: "w-[74%]", latency: 32 },
   { code: "syd", label: "Sydney", loadClass: "w-[46%]", latency: 41 },
-];
-
-const signalSeries = [
-  { key: "s01", heightClass: "h-[22%]" },
-  { key: "s02", heightClass: "h-[28%]" },
-  { key: "s03", heightClass: "h-[24%]" },
-  { key: "s04", heightClass: "h-[39%]" },
-  { key: "s05", heightClass: "h-[43%]" },
-  { key: "s06", heightClass: "h-[38%]" },
-  { key: "s07", heightClass: "h-[52%]" },
-  { key: "s08", heightClass: "h-[61%]" },
-  { key: "s09", heightClass: "h-[57%]" },
-  { key: "s10", heightClass: "h-[72%]" },
-  { key: "s11", heightClass: "h-[68%]" },
-  { key: "s12", heightClass: "h-[81%]" },
-  { key: "s13", heightClass: "h-[78%]" },
-  { key: "s14", heightClass: "h-[88%]" },
 ];
 
 const chartPresets = [
@@ -122,14 +107,7 @@ export default async function Home({ searchParams }: HomeProps) {
                   </div>
                 </div>
 
-                <div className="mt-5 flex h-48 items-end gap-2">
-                  {signalSeries.map((signal) => (
-                    <div
-                      className={`min-w-0 flex-1 rounded-t-sm bg-[#f2c14e] ${signal.heightClass}`}
-                      key={signal.key}
-                    />
-                  ))}
-                </div>
+                <LaunchSignalChart />
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-3">
                   {chartPresets.map((preset) => (
